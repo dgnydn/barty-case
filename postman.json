@@ -1,0 +1,765 @@
+{
+	"info": {
+		"_postman_id": "007ab11f-3983-46c2-9ceb-b676e26ea840",
+		"name": "NextJS Swagger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2500364"
+	},
+	"item": [
+		{
+			"name": "api/users",
+			"item": [
+				{
+					"name": "{userId}",
+					"item": [
+						{
+							"name": "Get user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNiY2QyNTI2NTlhZWYwODljZjY1NDM0IiwiZW1haWwiOiJwb3N0bWFuQHBvc3RtYW4uY29tIiwibmFtZSI6IkRvxJ9hbiIsInN1cm5hbWUiOiJBeWTEsW4iLCJ1c2VybmFtZSI6ImhlbGxvcG9zdG1hbiIsImFnZSI6MzIsImJvcm5BdCI6IjE5OTEtMDItMDVUMjI6MDA6MDAuMDAwWiIsImxvY2F0aW9uIjp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbMzMsMzRdfSwiYWJvdXQiOiJoZWxsbyBmcm9tIHBvc3RtYW4iLCJpbWFnZSI6Imh0dHBzOi8vdmlhLnBsYWNlaG9sZGVyLmNvbS8xNTAiLCJiYWxhbmNlIjoxMDAsInBob25lTnVtYmVyIjoiNTU1NTU1NTU1NSIsImNyZWF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiJ9LCJpYXQiOjE2NzMzMTkxMTcsImV4cCI6MTY3MzMxOTcxN30.Pg8PwGCXZrblS4aXYseyuB-CVIHOX4w9dDuPe-Ldp-kw06XBzcTWv9Ktr_Vjlujl0uaHPCz3MAMjpSmAyM_ljA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "63bcd252659aef089cf65434",
+											"description": "(Required) User id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "{ status: 200, message: \"User found\", user }",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "{ status: 404, error: \"User not found\" }",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNiY2QyNTI2NTlhZWYwODljZjY1NDM0IiwiZW1haWwiOiJwb3N0bWFuQHBvc3RtYW4uY29tIiwibmFtZSI6IkRvxJ9hbiIsInN1cm5hbWUiOiJBeWTEsW4iLCJ1c2VybmFtZSI6ImhlbGxvcG9zdG1hbiIsImFnZSI6MzIsImJvcm5BdCI6IjE5OTEtMDItMDVUMjI6MDA6MDAuMDAwWiIsImxvY2F0aW9uIjp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbMzMsMzRdfSwiYWJvdXQiOiJoZWxsbyBmcm9tIHBvc3RtYW4iLCJpbWFnZSI6Imh0dHBzOi8vdmlhLnBsYWNlaG9sZGVyLmNvbS8xNTAiLCJiYWxhbmNlIjoxMDAsInBob25lTnVtYmVyIjoiNTU1NTU1NTU1NSIsImNyZWF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiJ9LCJpYXQiOjE2NzMzMjE2NjYsImV4cCI6MTY3MzMyMjI2Nn0.rl3rJMPff5_zckiW-lKsT5EZlhTdZD8WMplU5vWAnfxpY8iyqDTxvr7XbYmppW1piF8uI4V9PG-0Ne3WdQyYDQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"email\": \"postman@postman.com\",\n        \"password\": \"123123123\",\n        \"passwordAgain\": \"123123123\",\n        \"username\": \"updated\",\n        \"name\": \"Doğan\",\n        \"surname\": \"Aydın\",\n        \"age\": 32,\n        \"bornAt\": \"02/06/1991\",\n        \"location\": \"33,34\",\n        \"about\": \"hello from postman\",\n        \"image\": \"https://via.placeholder.com/150\",\n        \"balance\": 100,\n        \"phoneNumber\": \"5555555555\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "63bcd252659aef089cf65434",
+											"description": "(Required) User id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "{ status: 200, message: \"User updated\", user: updated }",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) Authorization token.",
+												"key": "Authorization",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "{ status: 401, error: \"Unauthorized\" }",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) Authorization token.",
+												"key": "Authorization",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "{ status: 404, error: \"User not found\" }",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) Authorization token.",
+												"key": "Authorization",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNiY2QyNTI2NTlhZWYwODljZjY1NDM0IiwiZW1haWwiOiJwb3N0bWFuQHBvc3RtYW4uY29tIiwibmFtZSI6IkRvxJ9hbiIsInN1cm5hbWUiOiJBeWTEsW4iLCJ1c2VybmFtZSI6ImhlbGxvcG9zdG1hbiIsImFnZSI6MzIsImJvcm5BdCI6IjE5OTEtMDItMDVUMjI6MDA6MDAuMDAwWiIsImxvY2F0aW9uIjp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbMzMsMzRdfSwiYWJvdXQiOiJoZWxsbyBmcm9tIHBvc3RtYW4iLCJpbWFnZSI6Imh0dHBzOi8vdmlhLnBsYWNlaG9sZGVyLmNvbS8xNTAiLCJiYWxhbmNlIjoxMDAsInBob25lTnVtYmVyIjoiNTU1NTU1NTU1NSIsImNyZWF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiJ9LCJpYXQiOjE2NzMzMTkxMTcsImV4cCI6MTY3MzMxOTcxN30.Pg8PwGCXZrblS4aXYseyuB-CVIHOX4w9dDuPe-Ldp-kw06XBzcTWv9Ktr_Vjlujl0uaHPCz3MAMjpSmAyM_ljA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "63bab102f563475d80585287",
+											"description": "(Required) User id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "{ status: 200, message: \"User deleted\" }",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Authorization token.",
+												"key": "Authorization",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "{ status: 401, error: \"Unauthorized\" }",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Authorization token.",
+												"key": "Authorization",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "{ status: 404, error: \"User not found\" }",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Authorization token.",
+												"key": "Authorization",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "",
+													"description": "(Required) User id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNiY2QyNTI2NTlhZWYwODljZjY1NDM0IiwiZW1haWwiOiJwb3N0bWFuQHBvc3RtYW4uY29tIiwibmFtZSI6IkRvxJ9hbiIsInN1cm5hbWUiOiJBeWTEsW4iLCJ1c2VybmFtZSI6ImhlbGxvcG9zdG1hbiIsImFnZSI6MzIsImJvcm5BdCI6IjE5OTEtMDItMDVUMjI6MDA6MDAuMDAwWiIsImxvY2F0aW9uIjp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbMzMsMzRdfSwiYWJvdXQiOiJoZWxsbyBmcm9tIHBvc3RtYW4iLCJpbWFnZSI6Imh0dHBzOi8vdmlhLnBsYWNlaG9sZGVyLmNvbS8xNTAiLCJiYWxhbmNlIjoxMDAsInBob25lTnVtYmVyIjoiNTU1NTU1NTU1NSIsImNyZWF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDEtMTBUMDI6NDk6NTQuMTkzWiJ9LCJpYXQiOjE2NzMzMTkxMTcsImV4cCI6MTY3MzMxOTcxN30.Pg8PwGCXZrblS4aXYseyuB-CVIHOX4w9dDuPe-Ldp-kw06XBzcTWv9Ktr_Vjlujl0uaHPCz3MAMjpSmAyM_ljA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Get all users"
+					},
+					"response": [
+						{
+							"name": "{ status: 200, users: users }",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Authorization token.",
+										"key": "Authorization",
+										"value": ""
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "{ status: 401, error: \"Unauthorized\" }",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Authorization token.",
+										"key": "Authorization",
+										"value": ""
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "{ status: 404, error: \"No users found\" }",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Authorization token.",
+										"key": "Authorization",
+										"value": ""
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create a new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"postman@postman.com\",\n        \"password\": \"123123123\",\n        \"passwordAgain\": \"123123123\",\n        \"username\": \"hellopostman\",\n        \"name\": \"Doğan\",\n        \"surname\": \"Aydın\",\n        \"age\": 32,\n        \"bornAt\": \"02/06/1991\",\n        \"location\": \"33,34\",\n        \"about\": \"hello from postman\",\n        \"image\": \"https://via.placeholder.com/150\",\n        \"balance\": 100,\n        \"phoneNumber\": \"5555555555\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Create a new user"
+					},
+					"response": [
+						{
+							"name": "{ status: 201, message: \"User created\", user: registeredUserData }",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "{ status: 400, error: \"Missing user data\" } or { status: 400, error: \"Invalid user data\" }",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "{ status: 409, error: \"User already exists\" }",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Authenticate a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"postman@postman.com\",\n        \"password\": \"123123123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/authenticate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"authenticate"
+							]
+						},
+						"description": "Authenticate a user"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

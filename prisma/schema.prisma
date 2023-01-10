@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  email       String    @unique
+  name        String
+  surname     String
+  username    String    @unique
+  age         Int?
+  bornAt      DateTime?
+  location    GeoPoint
+  about       String?
+  image       String?
+  balance     Int       @default(0)
+  password    String
+  phoneNumber String?   @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([location], map: "geometry_2dsphere")
+}
+
+type GeoPoint {
+  type        String  @default("Point")
+  coordinates Float[]
+}

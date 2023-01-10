@@ -1,0 +1,8 @@
+{
+  "WillLuke.nextjs.addTypesOnSave": true,
+  "WillLuke.nextjs.hasPrompted": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "yaml.schemas": {
+    "openapi:v3": "untitled:Untitled-1"
+  }
+}
